@@ -1,9 +1,7 @@
-import tensorflow as tf
-import tensorflow_addons as tfa
+import tensorflow as tf  
 import matplotlib.pyplot as plt
 from preprocess import get_data
 import os
-import pickle
 
 class Model:
     def __init__(self):
@@ -74,8 +72,8 @@ class Model:
 
         test_loss, test_accuracy = self.model.evaluate(test_data, test_labels)
         print("Test Accuracy:", test_accuracy)
+        print("Test Loss:", test_loss)
 
         self.model.save("saved_model.h5")
-
 
 Model()

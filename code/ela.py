@@ -23,11 +23,6 @@ def ela(image_path):
     # plt.imshow(ela_im, cmap='gray') 
     # plt.axis('off') 
     # plt.show()
-
-
     os.remove("temp")
 
     return np.array(ela_im)
-# ela("dog.jpg")
-
-    # ela_im.save("ela_image2.jpg")

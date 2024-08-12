@@ -4,12 +4,10 @@ import os
 import cv2
 import matplotlib.pyplot as plt
 from ela import ela
-from prnu import prnu
 
 def preprocess_image(image_path):
     img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
     img = img.astype(np.float32) / 255.0 
-
 
     # uncomment this line for ELA
     img = ela(image_path) 
@@ -17,8 +15,7 @@ def preprocess_image(image_path):
     ## uncomment the 3 lines below for PRNU
 
     # img = prnu(image_path)
-    img = cv2.resize(img, (255, 255))
-    img_width = img.size
+    # img = cv2.resize(img, (32, 32))
     # img = np.expand_dims(img, axis=-1)  # Add channel dimension
     return img
 
