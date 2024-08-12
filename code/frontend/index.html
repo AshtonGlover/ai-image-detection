@@ -9,50 +9,10 @@
 
         <br />
         <button id="submitBtn" style="display: none;">Submit Image</button>
+
+        <br />
+        <p id="result" style="display: none;">  </p>
     </body>
 </div>
 
-<script>
-    const fileInput = document.getElementById('fileInput');
-    const uploadedImage = document.getElementById('uploadedImage');
-    const submitBtn = document.getElementById('submitBtn');
-    let selectedFile = null;
-
-    fileInput.addEventListener('change', function(event) {
-        const file = event.target.files[0];
-
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                uploadedImage.src = e.target.result;
-                uploadedImage.style.display = 'block';
-                submitBtn.style.display = 'block';
-            };
-
-            reader.readAsDataURL(file);
-        } else {
-            uploadedImage.style.display = 'none'; 
-        }
-    });
-
-    submitBtn.addEventListener('click', function() {
-        if (selectedFile) {
-            // Create a FormData object and append the selected file
-            const formData = new FormData();
-            formData.append('image', selectedFile);
-
-            // Send the POST request to the Flask server
-            fetch('/api/upload_image', {
-                method: 'POST',
-                body: formData,
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
-    });
-</script>
+<script src="script.js"></script>
