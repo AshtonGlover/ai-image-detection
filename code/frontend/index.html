@@ -1,17 +1,21 @@
-<div>
-    <h1>Real or AI-Generated???</h1>
+<div class="container">
+    <head>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <h1>Real or AI-Generated</h1>
 
     <body>
         <input type="file" accept="image/png, image/jpeg" id="fileInput" />
+        <div class="imageOutputs">
+            <br />
+            <img id="uploadedImage" style="display: none; max-width: 300px; margin-top: 20px;"/>
 
-        <br />
-        <img id="uploadedImage" style="display: none; max-width: 300px; margin-top: 20px;" />
+            <br />
+            <button id="submitBtn" style="display: none;">Submit Image</button>
 
-        <br />
-        <button id="submitBtn" style="display: none;">Submit Image</button>
-
-        <br />
-        <p id="result" style="display: none;">  </p>
+            <br />
+            <p id="result" style="display: none;"></p>
+        </div>
     </body>
 </div>
 

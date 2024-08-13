@@ -1,0 +1,23 @@
+h1, body {
+    text-align: center;
+}
+
+.imageOutputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center;
+    text-align: center; 
+    height: 100vh; 
+}
+
+.imageOutputs img,
+.imageOutputs button,
+.imageOutputs p {
+    margin: 10px 0; 
+}
+
+.container {
+    background-color: blanchedalmond;
+    min-height: 100vh;
+}

@@ -1,11 +1,14 @@
 const fileInput = document.getElementById('fileInput');
 const uploadedImage = document.getElementById('uploadedImage');
 const submitBtn = document.getElementById('submitBtn');
+let selectedFile = null;
 
 fileInput.addEventListener('change', function(event) {
     const file = event.target.files[0];
 
     if (file) {
+        selectedFile = file
+
         const reader = new FileReader();
         reader.onload = function(e) {
             uploadedImage.src = e.target.result;
@@ -15,16 +18,17 @@ fileInput.addEventListener('change', function(event) {
 
         reader.readAsDataURL(file);
     } else {
+        file = null;
         uploadedImage.style.display = 'none'; 
     }
 });
 
-submitBtn.addEventListener('click', function() {
-    if (uploadedImage) {
+submitBtn.addEventListener('click', async function() {
+    if (selectedFile) {
         const formData = new FormData();
-        formData.append('image', uploadedImage);
+        formData.append('image', selectedFile);
 
-        fetch('http://127.0.0.1:5000/api/upload_image', {
+        await fetch('http://127.0.0.1:5000/api/upload_image', {
             method: 'POST',
             body: formData,
         })
@@ -40,6 +44,16 @@ submitBtn.addEventListener('click', function() {
     }
 });
 
-function setResult() {
-    document.getElementById("result").textContent = "rah";
+async function setResult() {
+    const resultTag = document.getElementById("result")
+    resultTag.style.display = 'block';
+
+    await fetch('http://127.0.0.1:5000/api/get_decision')
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 }

@@ -16,31 +16,31 @@ class Model:
             tf.keras.layers.BatchNormalization(),
             tf.keras.layers.ReLU(),
             tf.keras.layers.MaxPooling2D((2, 2)),
-            tf.keras.layers.Dropout(0, 25),
+            tf.keras.layers.Dropout(0.25),
             
             tf.keras.layers.Conv2D(64, (3, 3), padding='same'),
             tf.keras.layers.BatchNormalization(),
             tf.keras.layers.ReLU(),
             tf.keras.layers.MaxPooling2D((2, 2)),
-            tf.keras.layers.Dropout(0, 25),
+            tf.keras.layers.Dropout(0.25),
             
             tf.keras.layers.Conv2D(64, (3, 3), padding='same'),
             tf.keras.layers.BatchNormalization(),
             tf.keras.layers.ReLU(),
             tf.keras.layers.MaxPooling2D((2, 2)),
-            tf.keras.layers.Dropout(0, 25),
+            tf.keras.layers.Dropout(0.25),
             
             tf.keras.layers.Conv2D(64, (3, 3), padding='same'),
             tf.keras.layers.BatchNormalization(),
             tf.keras.layers.ReLU(),
             tf.keras.layers.MaxPooling2D((2, 2)),
-            tf.keras.layers.Dropout(0, 25),
+            tf.keras.layers.Dropout(0.25),
             
             tf.keras.layers.Flatten(),
             tf.keras.layers.Dense(64),
             tf.keras.layers.BatchNormalization(),
             tf.keras.layers.ReLU(),
-            tf.keras.layers.Dropout(0, 5),
+            tf.keras.layers.Dropout(0.5),
             
             tf.keras.layers.Dense(1, activation='sigmoid')
         ])
@@ -68,7 +68,7 @@ class Model:
               loss='binary_crossentropy',
               metrics=['accuracy'])
 
-        self.model.fit(train_data, train_labels, epochs=10, validation_data=(test_data, test_labels))
+        self.model.fit(train_data, train_labels, epochs=50, validation_data=(test_data, test_labels))
 
         test_loss, test_accuracy = self.model.evaluate(test_data, test_labels)
         print("Test Accuracy:", test_accuracy)
