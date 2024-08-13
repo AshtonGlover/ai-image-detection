@@ -1,6 +1,6 @@
 # ai-image-detection
 
-This program utilizes CNNs to determine whether or not an image is real or AI-Generated using two pixel-wise feature extraction techniques, ELA (Error Level Analysis) and PRNU (Photo Response Non-Uniformity). The model was trained on a dataset called CIFAKE which is made up of 100,000 images for training (50,000 real and 50,000 fake), as well as 20,000 images for testing (10,000 real and 10,000 fake). 
+This program utilizes CNNs to determine whether or not an image is real or AI-Generated using two pixel-wise feature extraction techniques, ELA (Error Level Analysis) and PRNU (Photo Response Non-Uniformity). The model was trained on a dataset called CIFAKE which is made up of 100,000 images for training (50,000 real and 50,000 fake), as well as 20,000 images for testing (10,000 real and 10,000 fake). I set up a simple web interface where a user can upload an image and let the model predict whether it is real or fake.
 
 Dataset Citations:
 
