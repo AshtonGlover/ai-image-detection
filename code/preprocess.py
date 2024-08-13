@@ -5,9 +5,13 @@ import cv2
 import matplotlib.pyplot as plt
 from ela import ela
 
-def preprocess_image(image_path):
-    img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-    img = img.astype(np.float32) / 255.0 
+def preprocess_image(image_path, is_prediction=False, image=None):
+    img = None
+    if not is_prediction:
+        img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+        img = img.astype(np.float32) / 255.0
+    else:
+        img = image
 
     # uncomment this line for ELA
     img = ela(image_path) 

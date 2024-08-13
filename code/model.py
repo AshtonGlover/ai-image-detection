@@ -9,8 +9,8 @@ class Model:
             raise IsADirectoryError("Must be in code directory")
         
         self.model = tf.keras.Sequential([
-            tf.keras.layers.Input(shape=(32, 32, 3)), #change shape to (32, 32, 1) for ELA to work!!!!!! 
-                                                      #change shape to (32, 32, 3) for PRNU to work!!!!!!
+            tf.keras.layers.Input(shape=(32, 32, 3)), 
+                                                      
             
             tf.keras.layers.Conv2D(32, (3, 3), padding='same'),
             tf.keras.layers.BatchNormalization(),
