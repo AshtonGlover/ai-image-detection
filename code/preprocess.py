@@ -15,6 +15,7 @@ def preprocess_image(image_path, is_prediction=False, image=None):
 
     # uncomment this line for ELA
     img = ela(image_path) 
+    img = cv2.resize(img, (32, 32))
 
     ## uncomment the 3 lines below for PRNU
 

@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 import tensorflow as tf
 import sys
-sys.path.append('/Users/ashtonglover/Desktop/ai-image-detection/code')
+sys.path.append('/Users/ashtonglover/Desktop/Personal Projects/ai-image-detection/code')
 from preprocess import preprocess_image
 import numpy as np
 from flask_cors import CORS
@@ -34,7 +34,7 @@ def get_decision():
     if image_path == "":
         return jsonify({'error': 'Must upload an image first'}), 400
     
-    model = tf.keras.models.load_model('/Users/ashtonglover/Desktop/ai-image-detection/code/saved_model.h5')
+    model = tf.keras.models.load_model('/Users/ashtonglover/Desktop/Personal Projects/ai-image-detection/code/saved_model.h5')
 
     input_image = np.expand_dims(preprocess_image(image_path), axis=0)
  
