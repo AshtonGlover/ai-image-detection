@@ -68,7 +68,7 @@ class Model:
               loss='binary_crossentropy',
               metrics=['accuracy'])
 
-        self.model.fit(train_data, train_labels, epochs=50, validation_data=(test_data, test_labels))
+        self.model.fit(train_data, train_labels, epochs=10, validation_data=(test_data, test_labels))
 
         test_loss, test_accuracy = self.model.evaluate(test_data, test_labels)
         print("Test Accuracy:", test_accuracy)
