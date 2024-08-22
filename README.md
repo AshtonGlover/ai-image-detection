@@ -8,15 +8,15 @@ This program utilizes CNNs with the TensorFlow library to determine whether or n
 
 One of the pixel-wise feature extraction techniques utilized for this project was ELA or Error Level Analysis. ELA is usually used to detect image editing, as when real photos are compressed, there should be gradual losses of detail reflecting the slight degradation of data. Since AI-generated images result from training on large datasets of real photographs, they should display abnormal shifts when ELA is performed. Below is a side by side of a real image before and after ELA. 
 
-<img label="Original" src="metrics/original_dog.png" alt="Image 1" style="width: 45%; display: inline-block; margin-right: 5%;" />
-<img label="ELA" src="metrics/ela_dog.png" alt="Image 2" style="width: 45%; display: inline-block;" />
+| ![Original](metrics/original_dog.png) | ![ELA](metrics/ela_dog.png) |
+|------------------------|------------------------|
 
 **PRNU Specifics**
 
 PRNU, or Photo Response Non-Uniformity, arises from the noise patterns in cameras. Due to the impossible task of translating exactly what the eyes see to a real photograph, imperfections in cameras will result in a unique noise pattern. Because AI images do not come from a real camera, the PRNU pattern should not be rather inconsistent and unidentifiable. The PRNU pattern can be found by denoising the image and then subtracting it from the original image.
 
-<img label="Original" src="metrics/original_dog.png" alt="Image 1" style="width: 45%; display: inline-block; margin-right: 5%;" />
-<img label="PRNU" src="metrics/prnu_dog.png" alt="Image 2" style="width: 45%; display: inline-block;" />
+| ![Original](metrics/original_dog.png) | ![PRNU](metrics/prnu_dog.png) |
+|------------------------|------------------------|
 
 **Accuracy**
 
