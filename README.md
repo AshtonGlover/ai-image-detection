@@ -20,9 +20,8 @@ PRNU, or Photo Response Non-Uniformity, arises from the noise patterns in camera
 
 **Accuracy**
 
-<img src="metrics/ela_accuracy.png" alt="ela accuracy" width="300"/>
-
-<img src="metrics/prnu_accuracy.png" alt="prnu accuracy" width="300"/>
+| ![ELA](metrics/ela_accuracy.png) | ![PRNU](metrics/prnu_accuracy.png) |
+|------------------------|------------------------|
 
 **Dataset Citations:**
 
